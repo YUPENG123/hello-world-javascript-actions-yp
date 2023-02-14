@@ -1,4 +1,4 @@
-name: ci
+name: ci vhhg
 
 on: push
 
@@ -16,3 +16,4 @@ jobs:
       - run: |
           dir
       - run: pwd
+
