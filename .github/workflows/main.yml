@@ -9,7 +9,7 @@ jobs:
       - run: |
           ls -a
 
-  223:
+  test:
     runs-on: windows-latest
     steps:
       - run: |
