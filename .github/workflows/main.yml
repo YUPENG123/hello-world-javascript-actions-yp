@@ -17,3 +17,8 @@ jobs:
           dir
       - run: pwd
 
+Mac-os:
+  runs-on: mac-latest
+    steps:
+      -run: ls -a
+      -run: pwd
