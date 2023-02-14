@@ -3,7 +3,7 @@ name: ci
 on: push
 
 jobs:
-  Linux Explore-GitHub-Actions:
+  Linux_Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - run: |
