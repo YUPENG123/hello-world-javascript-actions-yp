@@ -3,7 +3,7 @@ name: My ci
 on:
   push:
 
-job:
+jobs:
   build:
     runs-on: ubuntu-last
 
