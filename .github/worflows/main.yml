@@ -2,3 +2,7 @@ name: My ci
 
 on:
   push:
+
+job:
+  build:
+    runs-on: ubuntu-last
