@@ -1,12 +1,11 @@
 name: My ci
 
-on:
-  push:
+on: push
 
 jobs:
   build:
-    runs-on: ubuntu-last
+    runs-on: ubuntu-latest
 
     steps:
       -run: |
-          ls
+        ls
