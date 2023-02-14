@@ -6,3 +6,6 @@ on:
 job:
   build:
     runs-on: ubuntu-last
+
+    run: |
+      ls
