@@ -3,14 +3,14 @@ name: ci
 on: push
 
 jobs:
-  Explore-GitHub-Actions:
+  Linux Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - run: |
           ls -a
 
-  test:
+  windows:
     runs-on: windows-latest
     steps:
       - run: |
-          dir
+          dir /a
