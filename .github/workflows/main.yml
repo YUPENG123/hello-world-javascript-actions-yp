@@ -19,6 +19,6 @@ jobs:
 
 Mac-os:
   runs-on: macos-latest
-    steps:
-      -run: ls -a
-      -run: pwd
+  steps:
+    - run: ls -a
+    - run: pwd
