@@ -7,5 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-last
 
-    run: |
-      ls
+    steps:
+      run: |
+        ls
