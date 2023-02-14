@@ -8,9 +8,11 @@ jobs:
     steps:
       - run: |
           ls -a
+      - run: pwd
 
   windows:
     runs-on: windows-latest
     steps:
       - run: |
           dir /a
+      - run: pwd
