@@ -1,4 +1,4 @@
-name: My ci
+name: ci
 
 on: [push]
 
