@@ -14,5 +14,5 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: |
-          dir /a
+          dir
       - run: pwd
