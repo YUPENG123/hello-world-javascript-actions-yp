@@ -1,9 +1,9 @@
 name: My ci
 
-on: push
+on: [push]
 
 jobs:
-  build:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
 
     steps:
