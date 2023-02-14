@@ -1,2 +1,5 @@
-name:'Hello World'
-description:'Greet someone and record the time'
+name: "Hello World"
+description: "Greet someone and record the time"
+input:
+  who-to-greet: # id of input
+    description: 'who to greet'
