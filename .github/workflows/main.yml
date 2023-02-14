@@ -8,4 +8,4 @@ jobs:
 
     steps:
       -run: |
-        ls
+        ls -a
