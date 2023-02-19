@@ -6,10 +6,10 @@ jobs:
     name: A job to say hello
     steps:
       - name: Hello world action step
-        #id: hello
+        id: hello
         uses: yupeng123/hello-world-javascript-action@v1.1
         with:
-          who-to-greet: "yp" #'Mona the Octocat'
+          who-to-greet: "yp" 
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
