@@ -7,9 +7,9 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: yupeng123/hello-world-javascript-actions-yp@v1.1
+        uses: yupeng123/hello-world-javascript-actions-yp
         with:
-          who-to-greet: "yp"
+          who-to-greet: "yupeng"
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
