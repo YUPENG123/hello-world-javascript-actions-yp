@@ -7,6 +7,7 @@ try {
   console.log(`Hello ${nameToGreet}!`);
   var envMy = process.env;
   console.log(envMy);
+  console.log("HELLO WORLD!!!");
   const time = new Date().toTimeString();
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
