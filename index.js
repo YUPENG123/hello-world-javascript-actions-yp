@@ -5,8 +5,8 @@ try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput("who-to-greet");
   console.log(`Hello ${nameToGreet}!`);
-  var envMy = process.env;
-  console.log(envMy);
+  //var envMy = process.env;
+  //console.log(envMy);
   console.log("HELLO WORLD!!!");
   const time = new Date().toTimeString();
   core.setOutput("time", time);
