@@ -4,7 +4,7 @@ const github = require("@actions/github");
 try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput("who-to-greet");
-  console.log("Hello ${nameToGreet}!");
+  console.log("Hello" ${nameToGreet}"!");
   //var envMy = process.env;
   //console.log(envMy);
   console.log("HELLO WORLD!!!");
