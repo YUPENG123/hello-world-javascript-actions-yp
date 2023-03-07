@@ -7,11 +7,11 @@ try {
   console.log(`Hello ${nameToGreet}!`);
   var env = process.env;
   //console.log(env);
-  console.log("HELLO WORLD!!!");
-  const time = new Date().toTimeString();
-  core.setOutput("time", time);
+  //console.log("HELLO WORLD!!!");
+  //const time = new Date().toTimeString();
+  //core.setOutput("time", time);
   
-  core.setOutput('outputKey', env);
+  core.setOutput('time', env);
   // Get the JSON webhook payload for the event that triggered the workflow
   //const payload = JSON.stringify(github.context.payload, undefined, 2);
   //console.log(`The event payload: ${payload}`);
