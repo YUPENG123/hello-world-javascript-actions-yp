@@ -18,3 +18,26 @@ try {
 } catch (error) {
   core.setFailed(error.message);
 }
+
+const myInput = core.getInput('input');
+try {
+  core.debug('Inside try block');
+  
+  if (!myInput) {
+    core.warning('myInput was not set');
+  }
+  
+  if (core.isDebug()) {
+    // curl -v https://github.com
+  } else {
+    // curl https://github.com
+  }
+
+  // Do stuff
+  core.info('Output to the actions build log')
+
+  core.notice('This is a message that will also emit an annotation')
+}
+catch (err) {
+  core.error(`Error ${err}, action may still succeed though`);
+}
