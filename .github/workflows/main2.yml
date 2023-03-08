@@ -9,6 +9,7 @@ jobs:
         id: hello
         uses: yupeng123/hello-world-javascript-actions-yp@main
         with:
+          ACTIONS_STEP_DEBUG : true
           who-to-greet: "yupeng"
       # Use the output from the `hello` step
       - name: Get the output time
