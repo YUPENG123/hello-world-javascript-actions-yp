@@ -10,7 +10,7 @@ try {
   //console.log("HELLO WORLD!!!");
   const time = new Date().toTimeString();
   //core.setOutput("time", time);
-
+  core.exportVariable('envVar', 'Val');
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
   //const payload = JSON.stringify(github.context.payload, undefined, 2);
