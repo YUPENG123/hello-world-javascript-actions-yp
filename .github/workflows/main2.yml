@@ -14,3 +14,5 @@ jobs:
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
       - run: echo '${{ steps.hello.outputs.time }}'
+      - name: My first step
+        uses: docker://alpine:3.8
