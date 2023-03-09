@@ -16,3 +16,11 @@ jobs:
       - run: echo '${{ steps.hello.outputs.time }}'
       - name: My first step
         uses: docker://alpine:3.8
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          path: output.log
