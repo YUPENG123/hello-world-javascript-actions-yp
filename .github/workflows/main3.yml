@@ -1,22 +1,18 @@
-name: Reusable deploy workflow
+name: Greeting on variable day
+
 on:
-  workflow_dispatch:
-  workflow_call:
-    inputs:
-      build_id:
-        required: true
-        type: number
-      deploy_target:
-        required: true
-        type: string
-      perform_deploy:
-        required: true
-        type: boolean
+  workflow_dispatch
+
+env:
+  DAY_OF_WEEK: Monday
 
 jobs:
-  deploy:
+  greeting_job:
     runs-on: ubuntu-latest
-    if: ${{ inputs.perform_deploy }}
+    env:
+      Greeting: Hello
     steps:
-      - name: Deploy build to target
-        run: deploy --build ${{ inputs.build_id }} --target ${{ inputs.deploy_target }}
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Mona
