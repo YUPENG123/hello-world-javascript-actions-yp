@@ -1,7 +1,6 @@
 name: Pull request labeler
 on:  
   workflow_dispatch:
-  [ pull_request_target ]
 
 permissions:
   contents: read
