@@ -1,5 +1,5 @@
 name: Test matrix
-on: push
+on: [push,workflow_dispatch]
 
 jobs:
   test:
