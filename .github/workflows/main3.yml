@@ -1,19 +1,28 @@
-name: Test matrix
+name: Build and deploy
 on: push
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        node: [14, 16]
+    runs-on: ubuntu-latest
+    outputs:
+      build_id: ${{ steps.build_step.outputs.build_id }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-      - name: Install dependencies
-        run: npm ci
-      - name: Run tests
-        run: npm test
+      - name: Build
+        id: build_step
+        run: |
+          ./build
+          echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ./deploy --build ${{ needs.build.outputs.build_id }}
+  debug:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    if: ${{ failure() }}
+    steps:
+      - uses: actions/checkout@v3
+      - run: ./debug
