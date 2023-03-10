@@ -1,28 +1,21 @@
-name: Build and deploy
-on: push
+name: Reusable deploy workflow
+on:
+  workflow_call:
+    inputs:
+      build_id:
+        required: true
+        type: number
+      deploy_target:
+        required: true
+        type: string
+      perform_deploy:
+        required: true
+        type: boolean
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    outputs:
-      build_id: ${{ steps.build_step.outputs.build_id }}
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build
-        id: build_step
-        run: |
-          ./build
-          echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+    if: ${{ inputs.perform_deploy }}
     steps:
-      - uses: actions/checkout@v3
-      - run: ./deploy --build ${{ needs.build.outputs.build_id }}
-  debug:
-    needs: [build, deploy]
-    runs-on: ubuntu-latest
-    if: ${{ failure() }}
-    steps:
-      - uses: actions/checkout@v3
-      - run: ./debug
+      - name: Deploy build to target
+        run: deploy --build ${{ inputs.build_id }} --target ${{ inputs.deploy_target }}
