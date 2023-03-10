@@ -1,12 +1,8 @@
-name: print
+name: CI
 on: push
-env:
-  continue: true
-  time: 3
 jobs:
-  job1:
+  prod-check:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
-      - continue-on-error: ${{ fromJSON(env.continue) }}
-        timeout-minutes: ${{ fromJSON(env.time) }}
-        run: echo ...
+      - run: echo "Deploying to production server on branch $GITHUB_REF"
