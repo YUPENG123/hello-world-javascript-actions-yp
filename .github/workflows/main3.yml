@@ -1,13 +1,19 @@
-name: Comment when opened
+name: CI
 on:
-  issues:
-    types:
-      - opened
+  push:
+    branches: [ main ]
 jobs:
-  comment:
+  container-test-job:
     runs-on: ubuntu-latest
+    container:
+      image: node:14.16
+      env:
+        NODE_ENV: development
+      ports:
+        - 80
+      volumes:
+        - my_docker_volume:/volume_mount
+      options: --cpus 1
     steps:
-      - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE: ${{ github.event.issue.html_url }}
+      - name: Check for dockerenv file
+        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
