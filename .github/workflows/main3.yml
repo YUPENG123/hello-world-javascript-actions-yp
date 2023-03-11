@@ -7,9 +7,9 @@ on:
         default: 'warning'
         type: choice
         options:
-        - info
-        - warning
-        - debug
+          - info
+          - warning
+          - debug
       print_tags:
         description: 'True to print to STDOUT'
         required: true
@@ -21,7 +21,7 @@ on:
       environment:
         description: 'Environment to run tests against'
         type: environment
-        required: false
+        required: true
 
 jobs:
   print-tag:
